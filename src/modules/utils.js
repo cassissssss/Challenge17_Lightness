@@ -15,3 +15,12 @@ export const generatePalette = (hex) => {
 
     return colors;
 };
+
+export const hexToCSSHSL = (hex) => {
+    // Transforme la valeur hexadécimal en hsl
+    const hsl = convert.hex.hsl(hex);
+    //Retourne une chaine de caractères au format css
+    return `hsl(${hsl[0]}deg, ${hsl[1]}%, ${hsl[2]}%)`;
+}
+
+export const isHexColor = (hex) => /^#[0-9A-F]{6}$/i.test(hex);
